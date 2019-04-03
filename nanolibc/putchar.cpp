@@ -1,12 +1,10 @@
-#include <stdlib.h>
+#include "libc.h"
 
 constexpr int line_buffer_size = 100;
 int line_buffer_pos = 0;
 char* line_buffer = nullptr;
 
-
 extern "C" {
-struct FILE;
 
 // Will be provided by Javascript.
 void print_string(const char* str);
@@ -33,4 +31,5 @@ int putchar(int ch) {
 	_putchar(ch);
 	return ch;
 }
+
 }
